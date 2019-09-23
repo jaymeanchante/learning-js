@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Curso Javascript</title>
+	</head>
+	<body>
+		<div id="app">
+			<!--  <button onclick="mostraAlerta()">Me pressione</button>
+	   		quando clicar no botão, irá chamar a função mostraAlerta-->
+			<input type="text" name="nome" id="nome" class="nome" />
+			<button class="botao">Adicionar</button>
+		</div>
+
+		<div class="box"></div>
+		<script>
+		// Javascript: última coisa antes de fechar o body
+
+		// # 1. EVENTOS INLINE
+		function mostraAlerta() {
+			alert("Botão foi clicado");
+		}
+
+		// # 2. TRABALHANDO COM A DOM
+		
+		// pegando informação usando o id
+		var inputElement = document.getElementById("nome");
+		// pegando informação usando a tag, retorna um vetor com todas as tags
+		var inputElement = document.getElementsByTagName("input");
+		// pegando informação usando a class
+		var inputElement = document.getElementsByClassName("nome");
+		// pegando informação usando query selector
+		var inputElement = document.querySelector("body div#app input")
+		var inputElement = document.querySelector("input[name=nome]")
+		var btnElement = document.querySelector("button.botao")
+		btnElement.onclick = function() {
+			var text = inputElement.value;
+			alert(text)}
+
+		// # 3. LIDANDO COM ELEMENTOS
+
+		// criando elementos no DOM totalmente novos
+		var linkElement = document.createElement("a");
+		// linkElement.href = "https://duck.com"; --> pode-se fazer como abaixo
+		linkElement.setAttribute("href", "https://duck.com");
+		linkElement.setAttribute("title", "Site do duckduckgo");
+
+		var textElement = document.createTextNode("Acessar duckduckgo");
+		linkElement.appendChild(textElement);
+
+		var containerElement = document.querySelector("#app");
+		containerElement.appendChild(linkElement);
+
+		// modificando elementos já existentes
+		var inputElement = document.querySelector("#nome");
+		containerElement.removeChild(inputElement);
+
+		// # 4. ALTERANDO ESTILOS
+
+		var boxElement = document.querySelector(".box");
+		boxElement.style.width = 100;
+		boxElement.style.height = 100;
+		boxElement.style.backgroundColor = "#f00";
+
+		</script>
+	</body>
+</html>

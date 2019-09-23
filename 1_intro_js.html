@@ -1,0 +1,116 @@
+<html>
+	<head>
+		<title>Curso Javascript</title>
+	</head>
+	<body>
+		<script>
+		// Javascript: última coisa antes de fechar o body
+
+		// # 1. VARIÁVEIS
+		console.log("Hello world")
+		var nome = "Jayme"; //string
+		var idade = 27; // integer
+		var peso = 68.4; // float
+		var humano = true; // boolean
+		var alunos = ["Jayme", "Diego"] // vetor
+		var aluno = {
+			nome: "Jayme",
+			idade: 27,
+			peso: 68.4,
+			humano: true
+		}; // objeto
+		console.log(alunos[0]);
+		console.log(aluno.peso);
+
+		// # 2. OPERAÇÕES ARITMÉTICAS
+		var x = 11, y = 5;
+		x += 3; // igual a x = x + 3;
+		var resultado = x % y;
+		// outros operadores: *, -, /
+		console.log(resultado);
+		console.log(x);
+
+		// # 3. FUNÇÕES
+		function soma(numero1, numero2) {
+			var resultado = numero1 + numero2;
+			return resultado
+		}
+		var resultado = soma(1, 2);
+		console.log(resultado);
+
+		// # 4. CONDICIONAIS
+		function retornaSexo(sexo) {
+			// M, F
+			// Masculino, Feminino
+			// usando if, else if e else
+			if (sexo == "M") { // == compara valor apenas; === compara valor e tipo
+				return "Masculino";
+			}
+			else if (sexo == "F") {
+				return "Feminino"
+			}
+			else {
+					return "Outro"
+			}
+		}
+		function retornaSexo(sexo) {
+			switch (sexo) {
+				case "M":
+					return "Masculino";
+				case "F":
+					return "Feminino";
+				default:
+					return "Outro";
+			}
+		}
+		var resultado = retornaSexo("F");
+		console.log(resultado);
+
+		// # 5. OPERADORES LÓGICOS
+		// AND, OR, NOT
+		var sexo = "M", idade = 27;
+		if (sexo == "M" && idade > 18) {
+			console.log("Sexo M e Idade maior que 18")
+		}
+		if (sexo == "M" || idade < 18) {
+			console.log("Sexo M ou Idade menor que 18")
+		}
+		if (sexo != "F") {
+			console.log("Sexo diferente de F")
+		}
+		// armazenando o operador em variável
+		var masculino = sexo == "M";
+		console.log(masculino);
+
+		// # 6. CONDIÇÃO TERNÁRIA
+		var sexo = "M";
+		if (sexo == "M") {
+			console.log("Masculino");
+		} else {
+			console.log("Feminino");
+		};
+
+		// mesmo que o acima, de uma forma mais limpa
+		var retorno = (sexo == "M") ? "Masculino" : "Feminino";
+		console.log(retorno);
+
+		// # 7. ESTRUTURAS DE REPETIÇÃO
+		for (var i = 0; i <= 5; i++) {
+			console.log(i)
+		};
+		
+		var j = 100;
+		while (j <= 105) {
+			console.log(j);
+			j ++;
+		};
+
+		// # 7. INTERVALO E TIMEOUT
+		function exibeAlgo() {
+			console.log("Hello world")
+		}
+		setInterval(exibeAlgo, 1000); // ativa a função toda vez a cada 1s
+		setTimeout(exibeAlgo, 5000); // ativa a função 1 vez após 5s
+		</script>
+	</body>
+</html>
