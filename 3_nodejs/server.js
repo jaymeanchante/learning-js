@@ -20,13 +20,21 @@
 // `npm install require-dir`
 // so we don't have have to require each specific file
 
+// # 11. Pagination
+// `npm install mongoose-paginate`
+
+// # 12. CORS
+// `npm install cors`
+
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const requireDir = require("require-dir");
 
 // initializing the app
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 // conecting to MongoDB
 mongoose.connect(
