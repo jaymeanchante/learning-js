@@ -26,6 +26,7 @@ const requireDir = require("require-dir");
 
 // initializing the app
 const app = express();
+app.use(express.json());
 
 // conecting to MongoDB
 mongoose.connect(
